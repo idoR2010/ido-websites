@@ -2,39 +2,45 @@
 
 <!DOCTYPE html>
 
-<html>
+<html dir="rtl">
 <head runat="server">
     <title>האתר שלי</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        img.menu {
+            width:100px;
+            height:50px
+        }
+    </style>
 </head>
 <body>
     <center>
-        <table border="1" height="800px" width="80%">
-            <tr>
-                <td>האתר שלי</td>
+        <table border="1" style="height: 800px; width: 80%; background-color:silver">
+            <tr style="height: 70px">
+                <td style="text-align: center">
+                    <font style="color:royalblue; font-size: 50px">האתר שלי</font>
+                </td>
             </tr>
-            <tr height="200px">
-                <td>
-                    <a href="Page1.aspx">דף הבית</a> <a href="Page2.aspx">הרשמה</a>
+         <tr height="200px">
+             <td style="text-align: center">
+                    <a href="Page1.aspx"><img src="Images/תמונה4.png"  class="menu"/></a>
+                    <a href="Register.aspx"><img src="Images/register.png" class="menu"/></a>
+                    <a href="Page3.aspx"><img src="Images/תמונה2.png" class="menu"/></a>
+                    <a href="Page4.aspx"><img src="Images/תמונה3.png" class="menu"/></a>
+                    <a href="Page5.aspx"><img src="Images/תמונה5.png" class="menu"/></a>
+                    <a href="Page6.aspx"><img src="Images/תמונה6.png" class="menu"/></a>
+                    <a href="Page7.aspx"><img src="Images/תמונה7.png" class="menu"/></a>
+                    <a href="Page8.aspx"><img src="Images/תמונה8.png" class="menu"/></a>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td style="text-align: center">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </td>
-            </tr>
-            <tr height="100px">
-                <td>END
-                </td>
-            </tr>
-
         </table>
     </center>
-
-
-
 
 </body>
 </html>

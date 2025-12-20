@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿<%@ Page Title = "" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Page2.aspx.cs.cs" Inherits="Page2_aspx" %>
 
-public partial class _Default : System.Web.UI.Page
-{
-    protected void Page_Load(object sender, EventArgs e)
-    {
+<asp:Content ID = "Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content >
+< asp:Content ID = "Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+</asp:Content >
 
-    }
-}

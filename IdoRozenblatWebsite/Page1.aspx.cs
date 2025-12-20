@@ -11,7 +11,6 @@ public partial class form : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-
         str = "<table border = '1'>";
         for(int i=1; i<11; i++)
         {
