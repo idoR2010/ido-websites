@@ -16,18 +16,19 @@
 </head>
 <body>
     <center>
-        <table border="1" style="height: 800px; width: 80%; background-color:silver">
+        <table border="1" style="height: 625px; width: 90%; background-color:silver">
             <tr style="height: 70px">
                 <td style="text-align: center">
                     <font style="color:royalblue; font-size: 50px">האתר שלי</font>
                 </td>
             </tr>
-         <tr height="200px">
+         <tr height="100px">
              <td style="text-align: center">
                     <a href="Page1.aspx"><img src="Images/תמונה4.png"  class="menu"/></a>
+                    <a href="Page9.aspx"><img src="Images/תמונה9.png" class="menu"/></a>
                     <a href="Register.aspx"><img src="Images/register.png" class="menu"/></a>
-                    <a href="Page3.aspx"><img src="Images/תמונה2.png" class="menu"/></a>
                     <a href="Page4.aspx"><img src="Images/תמונה3.png" class="menu"/></a>
+                    <a href="Page3.aspx"><img src="Images/תמונה2.png" class="menu"/></a>
                     <a href="Page5.aspx"><img src="Images/תמונה5.png" class="menu"/></a>
                     <a href="Page6.aspx"><img src="Images/תמונה6.png" class="menu"/></a>
                     <a href="Page7.aspx"><img src="Images/תמונה7.png" class="menu"/></a>
