@@ -23,7 +23,7 @@
          </select>
      <br/>
          סיסמה
-         <input type="text" id="password" name="password" placeholder="password">
+         <input type="password" id="password" name="password" placeholder="password" required>
          <br/>
      <label for="user_type">איזה סוג משתמש אתה:</label>
      <select id="user_type" name="user_type" required>
@@ -31,28 +31,47 @@
      <option value="צופה">צופה</option>
        </select>
 
-     <p>משחק מעודף:</p>
+     <p>משחק מועדף:</p>
      <input type="radio" id="2k" name="fav_game" value="2k">
      <label for="2k">2k</label><br/>
      <input type="radio" id="fifa" name="fav_game" value="fifa">
      <label for="fifa">fifa</label><br/>
-     <input type="radio" id="אחר" name="fav_game" value="אחר">
-     <label for="אחר">אחר</label>
+     <input type="radio" id="fortnite" name="fav_game" value="fortnite">
+     <label for="fortnite">fortnite</label><br/>
+     <input type="radio" id="UFC" name="fav_game" value="UFC">
+     <label for="UFC">UFC</label><br/>
+     <input type="radio" id="madden" name="fav_game" value="madden">
+     <label for="madden">madden</label><br/>
+     <input type="radio" id="other" name="fav_game" value="אחר">
+     <label for="other">אחר</label>
+
      <br/>
+
      <p>פרט על עצמך</p>
      <textarea name="message" rows="6" cols="20"></textarea>
+
+     <br/>
+
+     <p>האם מסכים לקבל עדכונים?</p>
+     <input type="radio" id="yes" name="updates" value="yes">
+     <label for="yes">כן</label><br/>
+     <input type="radio" id="no" name="updates" value="no">
+     <label for="no">לא</label>
+
      <br/>
      <input type="submit" value="שלח">
         </form>
      <hr/>
 
-    <%=name %>
+    <%= name %>
     <%= phone %>
+    <%= phonenum %>
+    <%= mail %>
     <%= password %>
-    <%=mail %>
-    <%=age%>
     <%= user_type %>
     <%= fav_game %>
     <%= message %>
+
+    <%= st %>
 
 </asp:Content>
