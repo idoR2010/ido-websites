@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Register : System.Web.UI.Page
 {
-    public string st = "";
+    public string stResult = "";
 
     public string name;
     public string fav_game;
@@ -22,15 +23,15 @@ public partial class Register : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Page.IsPostBack) {
-        name = "name:" + Request.Form["fname"];
-        fav_game = "fav_game:" + Request.Form["fav_game"];
-        message = "message:" + Request.Form["message"];
-        phonenum = "phonenum:" + Request.Form["phonenumber"];
-        phone = "phone:" + Request.Form["phone"];
-        password = "password:" + Request.Form["password"];
-        mail = "mail:" + Request.Form["mail"];
-        user_type = "user_type:" + Request.Form["user_type"];
-        updates = "updates:" + Request.Form["updates"];
+        name = Request.Form["fname"];
+        fav_game =   Request.Form["fav_game"];
+        message = Request.Form["message"];
+        phonenum = Request.Form["phonenumber"];
+        phone =  Request.Form["phone"];
+        password =  Request.Form["password"];
+        mail =   Request.Form["mail"];
+        user_type =  Request.Form["user_type"];
+        updates =  Request.Form["updates"];
 
             string sqlInsert =
                     "INSERT INTO tUsers VALUES (" +
@@ -47,7 +48,14 @@ public partial class Register : System.Web.UI.Page
 
             MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
 
-            st = "נרשמת בהצלחה!";
+            bool userExists = MyAdoHelper.IsExist(sqlInsert);
+            if (userExists)
+            {
+                stResult = "המשתמש קיים";
+            } else
+            {
+                Response.Redirect("Page4.aspx");
+            }
 
         }
     }

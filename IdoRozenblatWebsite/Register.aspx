@@ -13,7 +13,7 @@
         <br/>
         מספר טלפון
      <input type="text" id="phonenum" name="phonenumber" placeholder="phonenumber" required>
-     <select name="phone" id="tel" required>
+     <select name="phone" id="phone" required>
         <option value="050">050</option>
         <option value="052">052</option>
         <option value="053">053</option>
@@ -63,15 +63,16 @@
         </form>
      <hr/>
 
-    <%= name %>
-    <%= phone %>
-    <%= phonenum %>
-    <%= mail %>
-    <%= password %>
-    <%= user_type %>
-    <%= fav_game %>
-    <%= message %>
+    <%= name %> <br />
+    <%= phone %> <br />
+    <%= phonenum %> <br />
+    <%= mail %> <br />
+    <%= password %> <br />
+    <%= user_type %> <br />
+    <%= fav_game %> <br />
+    <%= message %> <br />
+    <%= updates %> <br />
 
-    <%= st %>
+    <%= stResult %>
 
 </asp:Content>

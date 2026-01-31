@@ -28,7 +28,7 @@ public partial class Page4 : System.Web.UI.Page
             }
             else
             {
-                Response.Redirect("Page1.aspx");
+                st = "משתמש רשום";
             }
         }
     }
