@@ -63,15 +63,6 @@
         </form>
      <hr/>
 
-    <%= name %> <br />
-    <%= phone %> <br />
-    <%= phonenum %> <br />
-    <%= mail %> <br />
-    <%= password %> <br />
-    <%= user_type %> <br />
-    <%= fav_game %> <br />
-    <%= message %> <br />
-    <%= updates %> <br />
 
     <%= stResult %>
 

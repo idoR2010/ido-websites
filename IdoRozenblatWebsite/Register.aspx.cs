@@ -22,39 +22,46 @@ public partial class Register : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Page.IsPostBack) {
-        name = Request.Form["fname"];
-        fav_game =   Request.Form["fav_game"];
-        message = Request.Form["message"];
-        phonenum = Request.Form["phonenumber"];
-        phone =  Request.Form["phone"];
-        password =  Request.Form["password"];
-        mail =   Request.Form["mail"];
-        user_type =  Request.Form["user_type"];
-        updates =  Request.Form["updates"];
+        if (Page.IsPostBack)
+        {
+            name = Request.Form["fname"];
+            fav_game = Request.Form["fav_game"];
+            message = Request.Form["message"];
+            phonenum = Request.Form["phonenumber"];
+            phone = Request.Form["phone"];
+            password = Request.Form["password"];
+            mail = Request.Form["mail"];
+            user_type = Request.Form["user_type"];
+            updates = Request.Form["updates"];
 
-            string sqlInsert =
-                    "INSERT INTO tUsers VALUES (" +
-                    "N'" + name + "'," +
-                    "N'" + mail + "'," +
-                    "N'" + password + "'," +
-                    phone + "," +
-                    phonenum + "," +
-                    "N'" + user_type + "'," +
-                    "N'" + fav_game + "'," +
-                    "N'" + message + "'," +
-                    "N'" + updates + "'" +
-                    ")";
 
-            MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
+            string sqlSelect =
+                "SELECT * FROM tUsers " +
+                "WHERE mail = '" + mail + "' ";
 
-            bool userExists = MyAdoHelper.IsExist(sqlInsert);
+            bool userExists = MyAdoHelper.IsExist(sqlSelect);
             if (userExists)
             {
                 stResult = "המשתמש קיים";
-            } else
+            }
+            else
             {
-                Response.Redirect("Page4.aspx");
+                string sqlInsert =
+                        "INSERT INTO tUsers VALUES (" +
+                        "N'" + name + "'," +
+                        "N'" + mail + "'," +
+                        "N'" + password + "'," +
+                        phone + "," +
+                        phonenum + "," +
+                        "N'" + user_type + "'," +
+                        "N'" + fav_game + "'," +
+                        "N'" + message + "'," +
+                        "N'" + updates + "'" +
+                        ")";
+
+                MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
+
+                Response.Redirect("LogIn.aspx");
             }
 
         }
