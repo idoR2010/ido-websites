@@ -15,20 +15,27 @@ public partial class Page4 : System.Web.UI.Page
             string mail = Request.Form["mail"];
             string password = Request.Form["password"];
 
-            string sql =
-                "SELECT * FROM tUsers " +
-                "WHERE mail = '" + mail + "' " +
-                "AND password = '" + password + "'";
-
-            bool userExists = MyAdoHelper.IsExist(sql);
-
-            if (!userExists)
+            if (mail == "maneger12@manger.com" && password == "meneger676911")
             {
-                st = "אימייל או סיסמה שגויים";
+                Response.Redirect("Meneger.aspx");
             }
             else
-            {
+            { 
+                string sql =
+                    "SELECT * FROM tUsers " +
+                    "WHERE mail = '" + mail + "' " +
+                    "AND password = '" + password + "'";
+
+                bool userExists = MyAdoHelper.IsExist(sql);
+
+                if (!userExists)
+                {
+                   st = "אימייל או סיסמה שגויים";
+                }
+                else
+                {
                 Response.Redirect("Home.aspx");
+                }
             }
         }
     }

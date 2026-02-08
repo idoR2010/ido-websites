@@ -5,8 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
      <h3>הרשמה</h3>
     <form runat="server" method="post">
-     <label for="fname">שם:</label>
-     <input type="text" id="fname" name="fname" placeholder="firstname" required>
+     <label for="fname">שם פרטי:</label>
+     <input type="text" id="firstname" name="firstname" placeholder="firstname" required>
+     <br/>
+     <label for="fname">שם משפחה:</label>
+     <input type="text" id="lastname" name="lastname" placeholder="lastname" required>
      <br/>
      מייל:
         <input type="text" id="mail" name="mail" placeholder="mail" required>
@@ -32,17 +35,17 @@
        </select>
 
      <p>משחק מועדף:</p>
-     <input type="radio" id="2k" name="fav_game" value="2k">
+     <input type="checkbox" id="2k" name="fav_game" value="2k">
      <label for="2k">2k</label><br/>
-     <input type="radio" id="fifa" name="fav_game" value="fifa">
+     <input type="checkbox" id="fifa" name="fav_game" value="fifa">
      <label for="fifa">fifa</label><br/>
-     <input type="radio" id="fortnite" name="fav_game" value="fortnite">
+     <input type="checkbox" id="fortnite" name="fav_game" value="fortnite">
      <label for="fortnite">fortnite</label><br/>
-     <input type="radio" id="UFC" name="fav_game" value="UFC">
+     <input type="checkbox" id="UFC" name="fav_game" value="UFC">
      <label for="UFC">UFC</label><br/>
-     <input type="radio" id="madden" name="fav_game" value="madden">
+     <input type="checkbox" id="madden" name="fav_game" value="madden">
      <label for="madden">madden</label><br/>
-     <input type="radio" id="other" name="fav_game" value="אחר">
+     <input type="checkbox" id="other" name="fav_game" value="אחר">
      <label for="other">אחר</label>
 
      <br/>

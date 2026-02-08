@@ -5,12 +5,14 @@ using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 public partial class Register : System.Web.UI.Page
 {
     public string stResult = "";
 
-    public string name;
+    public string firstname;
+    public string lastname;
     public string fav_game;
     public string phonenum;
     public string message;
@@ -24,7 +26,8 @@ public partial class Register : System.Web.UI.Page
     {
         if (Page.IsPostBack)
         {
-            name = Request.Form["fname"];
+            firstname = Request.Form["firstname"];
+            lastname = Request.Form["lastname"];
             fav_game = Request.Form["fav_game"];
             message = Request.Form["message"];
             phonenum = Request.Form["phonenumber"];
@@ -42,13 +45,14 @@ public partial class Register : System.Web.UI.Page
             bool userExists = MyAdoHelper.IsExist(sqlSelect);
             if (userExists)
             {
-                stResult = "המשתמש קיים";
+                stResult = "מייל שנכנס קיים במערכת, הכנס אימייל חדש";
             }
             else
             {
                 string sqlInsert =
                         "INSERT INTO tUsers VALUES (" +
-                        "N'" + name + "'," +
+                        "N'" + firstname + "'," +
+                        "N'" + lastname + "'," +
                         "N'" + mail + "'," +
                         "N'" + password + "'," +
                         phone + "," +
