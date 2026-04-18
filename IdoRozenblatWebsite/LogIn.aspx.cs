@@ -17,26 +17,30 @@ public partial class Page4 : System.Web.UI.Page
 
             if (mail == "maneger12@manger.com" && password == "meneger676911")
             {
-                Response.Redirect("Meneger.aspx");
+                Session["username"] = "מנהל";
+                Response.Redirect("Manager.aspx");
             }
             else
-            { 
+            {
+                Session["username"] = "רשום";
                 string sql =
                     "SELECT * FROM tUsers " +
                     "WHERE mail = '" + mail + "' " +
                     "AND password = '" + password + "'";
 
                 bool userExists = MyAdoHelper.IsExist(sql);
-
+                
                 if (!userExists)
                 {
-                   st = "אימייל או סיסמה שגויים";
+                    Session["username"] = "אורח";
+                    st = "אימייל או סיסמה שגויים";
                 }
                 else
                 {
                 Response.Redirect("Home.aspx");
                 }
             }
+
         }
     }
 }
