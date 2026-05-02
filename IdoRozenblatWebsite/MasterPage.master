@@ -8,6 +8,10 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style>
+        td.main {
+            background-image: url('Images/backround1.png');
+            background-size: 100% 100%;
+        }
         img.menu {
             width:100px;
             height:50px
@@ -30,16 +34,19 @@
                     <a href="Page9.aspx"><img src="Images/info.png" class="menu"/></a>
                     <a href="Register.aspx"><img src="Images/register3.png"  class="menu"/></a>
                     <a href="LogIn.aspx"><img src="Images/login2.png"  class="menu"/></a>
-                    <a href="Page3.aspx"><img src="Images/gallery2.png"   class="menu"/></a>
-                    <a href="Manager.aspx"><img src="Images/manager.png"  class="menu"/></a>
-                    <a href="item_temp.aspx"><img src="Images/reviews.png" class="menu"</a>
+                    <a href="gallary.aspx"><img src="Images/gallery2.png"   class="menu"/></a>
+                    
+
+                 <a href="Manager.aspx"><img src="Images/manager.png"  class="menu"/></a>
+                 
+                 <a href="item_temp.aspx"><img src="Images/reviews.png" class="menu" /></a>
                     <a href="Search.aspx"><img src="Images/search.png"  class="menu"/></a>
                     <a href="Page7.aspx"><img src="Images/update_info.png"  class="menu"/></a>
-                    <a href="Page8.aspx"><img src="Images/exit.png"  class="menu"/></a>
+                    <a href="exit.aspx"><img src="Images/exit.png"  class="menu"/></a>
                 </td>
             </tr>
             <tr>
-                <td style="text-align: center">
+                <td class="main" style="text-align: center">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </td>

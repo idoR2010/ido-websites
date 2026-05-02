@@ -1,10 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="item_temp.aspx.cs" Inherits="item_temp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script language ="javascript">
+        function checkAll() {
+            return true;
+        }
+        </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h3>ביקורות על משחקים</h3>
-    <form runat="server" method="post">
+    <form runat="server" method="post" onsubmit="return checkAll();">
      <label for="fname">שם המשתמש של השחקן:</label>
      <input type="text" id="gamerNickname" name="gamerNickname" placeholder="nickname" required>
      <br/>

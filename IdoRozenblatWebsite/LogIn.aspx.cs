@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,26 +19,31 @@ public partial class Page4 : System.Web.UI.Page
             if (mail == "maneger12@manger.com" && password == "meneger676911")
             {
                 Session["username"] = "מנהל";
+                Session["nihul"] = "ok";
                 Response.Redirect("Manager.aspx");
             }
             else
             {
-                Session["username"] = "רשום";
+                
                 string sql =
                     "SELECT * FROM tUsers " +
                     "WHERE mail = '" + mail + "' " +
                     "AND password = '" + password + "'";
 
-                bool userExists = MyAdoHelper.IsExist(sql);
-                
-                if (!userExists)
+                //bool userExists = MyAdoHelper.IsExist(sql);
+                DataTable dt = MyAdoHelper.ExecuteDataTable(sql);
+
+                if (dt.Rows.Count == 0)
+                //if (!userExists)
                 {
                     Session["username"] = "אורח";
                     st = "אימייל או סיסמה שגויים";
                 }
                 else
                 {
-                Response.Redirect("Home.aspx");
+                    Session["username"] = dt.Rows[0]["firstname"];
+                    Session["user"] = "ok";
+                    Response.Redirect("Home.aspx");
                 }
             }
 
