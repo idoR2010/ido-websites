@@ -8,41 +8,65 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style>
+        body {
+            background-image: url('Images/backround5.jpg'); /* שים פה את השם של התמונה שלך */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
         td.main {
-            background-image: url('Images/backround1.png');
+            background-color: white;
             background-size: 100% 100%;
         }
         img.menu {
-            width:100px;
-            height:50px
+            width:125px;
+            height:70px;
+        }
+        img.gallary{
+            width:350px;
+            height:250px
+        }
+        img.gallary2{
+            width:350px;
+            height:350px
+        }
+        table.page{
+            text-align:center;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    שלום <%=Session["username"]%>
+    שלום <%=Session["username"]%> 
     <center>
-        <table border="1" style="height: 625px; width: 90%; background-color:silver">
+        <table border="1" style="height: 625px; width: 90%; background-color:silver";>
             <tr style="height: 70px">
                 <td style="text-align: center">
                     <font style="color:royalblue; font-size: 50px">
-                        <img src="Images/תמונת%20כותר%20לאתר.png" /></font>
+                        <img src="Images/Screenshot%202026-06-04%20214403.png" style="height:75%; width:100%; object-fit: cover;" />
                 </td>
             </tr>
          <tr height="100px">
              <td style="text-align: center">
                     <a href="Home.aspx"><img src="Images/home.png"  class="menu"/></a>
-                    <a href="Page9.aspx"><img src="Images/info.png" class="menu"/></a>
+                    <a href="Info.aspx"><img src="Images/info.png" class="menu"/></a>
+                    <% if (Session["guest"] == "ok") {  %>
                     <a href="Register.aspx"><img src="Images/register3.png"  class="menu"/></a>
                     <a href="LogIn.aspx"><img src="Images/login2.png"  class="menu"/></a>
+                    <%}%>
                     <a href="gallary.aspx"><img src="Images/gallery2.png"   class="menu"/></a>
-                    
-
-                 <a href="Manager.aspx"><img src="Images/manager.png"  class="menu"/></a>
-                 
-                 <a href="item_temp.aspx"><img src="Images/reviews.png" class="menu" /></a>
+                    <% if (Session["nihul"] == "ok") { %>
+                    <a href="Manager.aspx"><img src="Images/manager.png"  class="menu"/></a>
+                    <%}%>
+                    <% if (Session["nihul"] == "ok" || Session["user"] == "ok") { %>
+                    <a href="item_temp.aspx"><img src="Images/reviews.png" class="menu" /></a>
                     <a href="Search.aspx"><img src="Images/search.png"  class="menu"/></a>
-                    <a href="Page7.aspx"><img src="Images/update_info.png"  class="menu"/></a>
+                    <%}%>
+                    <% if (Session["nihul"] == "ok" || Session["user"] == "ok") { %>
+                    
                     <a href="exit.aspx"><img src="Images/exit.png"  class="menu"/></a>
+                    <%}%>
                 </td>
             </tr>
             <tr>
@@ -50,8 +74,9 @@
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </td>
+                </tr>
         </table>
     </center>
-
+    
 </body>
 </html>

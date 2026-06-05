@@ -9,6 +9,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["user"] == null && Session["nihul"] == null && Session["guest"] == null)
+        {
+            Session["guest"] = "ok";
+            Session["username"] = "אורח";
+        }
     }
 }

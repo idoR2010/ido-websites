@@ -16,15 +16,15 @@ public partial class item_temp : System.Web.UI.Page
             string gameName = Request.Form["gameName"];
             string totalWins = Request.Form["totalWins"];
             string timePlayed = Request.Form["timePlayed"];
-            string personalReview = Request.Form["personalReview"];
+            string review = Request.Form["review"];
 
             string sqlInsert =
-                "INSERT INTO tGames (gamerNickname, gameName, totalWins, timePlayed, personalReview) VALUES (" +
+                "INSERT INTO tGames (gamerNickname, gameName, totalWins, timePlayed, review) VALUES (" +
                 "N'" + gamerNickname + "'," +
                 "N'" + gameName + "'," +
                 totalWins + "," +
                 timePlayed + "," +
-                "N'" + personalReview +
+                "N'" + review + "'" +
                 ")";
 
             MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);

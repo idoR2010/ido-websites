@@ -17,7 +17,7 @@ public partial class Page5 : System.Web.UI.Page
             string lastname = Request.Form["lastname"];
 
             string sql = "SELECT * FROM tUsers WHERE " +
-            "firstname LIKE N'%" + firstname + "%' OR " +
+            "firstname LIKE N'%" + firstname + "%' AND " +
             "lastname LIKE N'%" + lastname + "%'";
 
             DataTable dt = MyAdoHelper.ExecuteDataTable(sql);

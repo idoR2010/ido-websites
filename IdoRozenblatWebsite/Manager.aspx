@@ -14,7 +14,7 @@
  <input type="submit" value="שלח">
 
     </form>
-
+    <br />
     <%=st %>
 
 </asp:Content>
